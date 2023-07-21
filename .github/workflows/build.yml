@@ -1,0 +1,55 @@
+name: Build site
+on:
+ push:
+   branches:
+   - main
+ # schedule:
+   # * is a special character in YAML so you have to quote this string
+   # - cron: '23 12,16,18,20,22 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: pip install -r requirements.txt
+    # - run: ./prepare.sh
+      env:
+        DHV_USERNAME: ${{ secrets.DHV_USERNAME }}
+        DHV_PASSWORD: ${{ secrets.DHV_PASSWORD }}
+    - run: ./fetch-flights.sh
+    - name: Cache downloads
+      uses: actions/cache@v3
+      with:
+        key:  flights-1-${{hashFiles('_tmp/flights.json')}}
+        restore-keys:  flights-1-
+        path: _flights
+    - run: ./fetch-igc.sh
+    - name: Cache stats
+      uses: actions/cache@v3
+      with:
+        key:  stats-${{hashFiles('*.py')}}-${{hashFiles('_tmp/flights.json')}}
+        restore-keys:  stats-${{hashFiles('*.py')}}-
+        path: _stats
+    - run: ./flightstats.sh
+    # - run: ./sektoren-map.py
+    - run: ./website.py
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v2
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: '_out'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
