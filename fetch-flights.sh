@@ -5,6 +5,10 @@ set -e
 limit=2000
 year=2023
 
+mkdir -p _out
+mkdir -p _tmp
+mkdir -p _flights
+
 echo "flights.json: fetching"
 wget \
     --no-verbose \
