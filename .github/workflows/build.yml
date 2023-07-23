@@ -40,7 +40,7 @@ jobs:
         key:  stats-${{hashFiles('*.py')}}-${{hashFiles('_tmp/flights.json')}}
         restore-keys:  stats-${{hashFiles('*.py')}}-
         path: _stats
-    - run: ./flightstats.sh
+    # - run: ./flightstats.sh
     # - run: ./sektoren-map.py
     - run: ./website.py
 
