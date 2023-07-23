@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import math
 import sys
 import subprocess
@@ -9,6 +10,11 @@ import json
 
 from constants import *
 import landepunkt
+
+os.makedirs("_flights", exist_ok=True)
+os.makedirs("_stats", exist_ok=True)
+os.makedirs("_tmp", exist_ok=True)
+os.makedirs("_out", exist_ok=True)
 
 parser = argparse.ArgumentParser(description="TODO")
 parser.add_argument("-i", type=str, help="Gzipped IGC file to read", required=True)
