@@ -1,1 +1,5 @@
+folium
+geographiclib
+jinja2
 pandas
+pyopenair ==1.1.0

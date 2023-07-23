@@ -1,0 +1,73 @@
+{% block title %}Colibri Vereinsmeisterschaft 2023{% endblock %}
+{% block h1 %}Colibri Vereinsmeisterschaft 2023{% endblock %}
+{% block content %}
+
+
+<section>
+  <h2>Ranking Task 1</h2>
+
+  <div style="overflow-x:auto">
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th></th>
+          <th class="text-right">XC-Punkte</th>
+          <th class="text-right">Punkteabzug</th>
+          <th class="text-right">Wertungspunkte</th>
+          <th class="text-right">Landepunkte</th>
+          <th class="text-right">Gesamtpunkte</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in points.task1 %}
+        <tr>
+          <td>{{ p.rank }}</td>
+          <td class="text-right">{{ p.name }}</td>
+          <td class="text-right">{{ p.xc }}</td>
+          <td class="text-right">{{ p.deduction }}</td>
+          <td class="text-right">{{ p.xcvalid }}</td>
+          <td class="text-right">{{ p.landing }}</td>
+          <td class="text-right">{{ p.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section>
+  <h2>Ranking Task 2</h2>
+
+  <div style="overflow-x:auto">
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th></th>
+          <th class="text-right">XC-Punkte</th>
+          <th class="text-right">Punkteabzug</th>
+          <th class="text-right">Wertungspunkte</th>
+          <th class="text-right">Landepunkte</th>
+          <th class="text-right">Gesamtpunkte</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in points.task2 %}
+        <tr>
+          <td>{{ p.rank }}</td>
+          <td class="text-right">{{ p.name }}</td>
+          <td class="text-right">{{ p.xc }}</td>
+          <td class="text-right">{{ p.deduction }}</td>
+          <td class="text-right">{{ p.xcvalid }}</td>
+          <td class="text-right">{{ p.landing }}</td>
+          <td class="text-right">{{ p.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

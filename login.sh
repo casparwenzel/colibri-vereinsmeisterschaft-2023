@@ -2,6 +2,8 @@
 
 set -e
 
+source .env
+
 echo "Logging in"
 
 if [ -z "$DHV_PASSWORD" ]
