@@ -2,7 +2,7 @@
 
 set -e
 
-source .env
+# source .env
 
 echo "Logging in"
 
