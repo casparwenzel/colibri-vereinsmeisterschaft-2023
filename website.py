@@ -30,7 +30,8 @@ def task1(flight, lpradius=constants.lpradius, task_points=20):
     else:
         deduction = round(xc - task_points, 2)
         xcvalid = round(task_points - deduction, 2)
-    if flight["stats"]["landepunktabstand"] <= lpradius:
+    # if flight["stats"]["landepunktabstand"] <= lpradius:
+    if flight["LandingLocation"] == "Horben, Breisgau-Hochschwarzwald, Baden-W\u00fcrttemberg"
         landing = 20
     else:
         landing = 0
@@ -54,7 +55,8 @@ def task2(flight, lpradius=constants.lpradius, task_points=75):
     else:
         deduction = round(xc - task_points, 2)
         xcvalid = round(task_points - deduction, 2)
-    if flight["stats"]["landepunktabstand"] <= lpradius:
+    # if flight["stats"]["landepunktabstand"] <= lpradius:
+    if flight["LandingLocation"] == "Horben, Breisgau-Hochschwarzwald, Baden-W\u00fcrttemberg"
         landing = 20
     else:
         landing = 0
