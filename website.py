@@ -88,7 +88,7 @@ for flight in flight_data["data"]:
     id = flight["IDFlight"]
     pid = flight["FKPilot"]
 
-    # flight["stats"] = json.load(open(f"_stats/{id}.stats.json"))
+    flight["stats"] = json.load(open(f"_stats/{id}.stats.json"))
 
     if pid not in flights:
         flights[pid] = []
