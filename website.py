@@ -144,4 +144,4 @@ for i, flight in enumerate(task2_sorted.values()):
 # Write main website
 data = {}
 data["points"] = {"task1": points_task1[:10], "task2": points_task2[:10]}
-env.get_template("vereinsmeisterschaft.html").stream(data).dump(open(f"_out/vereinsmeisterschaft.html", "w"))
+env.get_template("index.html").stream(data).dump(open(f"_out/index.html", "w"))
