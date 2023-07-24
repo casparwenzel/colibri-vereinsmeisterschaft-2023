@@ -33,13 +33,13 @@ jobs:
         key:  flights-1-${{hashFiles('_tmp/flights.json')}}
         restore-keys:  flights-1-
         path: _flights
-    - run: ./fetch-igc.sh
-    - name: Cache stats
-      uses: actions/cache@v3
-      with:
-        key:  stats-${{hashFiles('*.py')}}-${{hashFiles('_tmp/flights.json')}}
-        restore-keys:  stats-${{hashFiles('*.py')}}-
-        path: _stats
+    # - run: ./fetch-igc.sh
+    # - name: Cache stats
+    #   uses: actions/cache@v3
+    #   with:
+    #     key:  stats-${{hashFiles('*.py')}}-${{hashFiles('_tmp/flights.json')}}
+    #     restore-keys:  stats-${{hashFiles('*.py')}}-
+    #     path: _stats
     # - run: ./flightstats.sh
     # - run: ./sektoren-map.py
     - run: ./website.py
