@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: pip install -r requirements.txt
-    # - run: ./prepare.sh
+    - run: ./prepare.sh
       env:
         DHV_USERNAME: ${{ secrets.DHV_USERNAME }}
         DHV_PASSWORD: ${{ secrets.DHV_PASSWORD }}
