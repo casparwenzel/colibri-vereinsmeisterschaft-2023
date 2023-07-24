@@ -6,8 +6,8 @@
 <section>
   <!-- <h2>Info</h2> -->
 
-  <p>Aktuelles Ranking der Colibri Vereinsmeisterschaft 2023. Hier geht's zur Ausschreibung: <a
-      href="https://gsccolibri.de/ausschreibung-colibri-vereinsmeisterschaft-2023/">Ausschreibung</a>.
+  <p>Aktuelles Ranking der Colibri Vereinsmeisterschaft 2023. <a
+      href="https://gsccolibri.de/ausschreibung-colibri-vereinsmeisterschaft-2023/">Hier geht's zur Ausschreibung</a>.
   </p>
 </section>
 
@@ -32,7 +32,8 @@
         <tr>
           <td>{{ p.rank }}</td>
           <td class="text-right">{{ p.name }}</td>
-          <td class="text-right">{{ p.xc }}</td>
+          <td><a href="https://de.dhv-xc.de/flight/${p.id}">{ p.xc }</a></td>
+          <!-- <td class="text-right">{{ p.xc }}</td> -->
           <td class="text-right">{{ p.deduction }}</td>
           <td class="text-right">{{ p.xcvalid }}</td>
           <td class="text-right">{{ p.landing }}</td>
@@ -66,7 +67,8 @@
         <tr>
           <td>{{ p.rank }}</td>
           <td class="text-right">{{ p.name }}</td>
-          <td class="text-right">{{ p.xc }}</td>
+          <td><a href="https://de.dhv-xc.de/flight/${p.id}">{ p.xc }</a></td>
+          <!-- <td class="text-right">{{ p.xc }}</td> -->
           <td class="text-right">{{ p.deduction }}</td>
           <td class="text-right">{{ p.xcvalid }}</td>
           <td class="text-right">{{ p.landing }}</td>

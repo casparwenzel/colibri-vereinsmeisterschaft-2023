@@ -39,6 +39,7 @@ def task1(flight, lpradius=constants.lpradius, task_points=20):
 
     return {
         "name": flight["FirstName"] + " " + flight["LastName"],
+        "id": flight["IDFlight"],
         "xc": xc,
         "deduction": deduction,
         "xcvalid": xcvalid,
@@ -64,6 +65,7 @@ def task2(flight, lpradius=constants.lpradius, task_points=75):
 
     return {
         "name": flight["FirstName"] + " " + flight["LastName"],
+        "id": flight["IDFlight"],
         "xc": xc,
         "deduction": deduction,
         "xcvalid": xcvalid,
