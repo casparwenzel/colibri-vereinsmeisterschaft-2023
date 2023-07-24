@@ -32,7 +32,7 @@
         <tr>
           <td>{{ p.rank }}</td>
           <td class="text-right">{{ p.name }}</td>
-          <td><a class="text-right" href="https://de.dhv-xc.de/flight/{p.id}">{{ p.xc }}</a></td>
+          <td class="text-right"><a href="https://de.dhv-xc.de/flight/${p.id}">{{ p.xc }}</a></td>
           <td class="text-right">{{ p.deduction }}</td>
           <td class="text-right">{{ p.xcvalid }}</td>
           <td class="text-right">{{ p.landing }}</td>
@@ -66,7 +66,7 @@
         <tr>
           <td>{{ p.rank }}</td>
           <td class="text-right">{{ p.name }}</td>
-          <td><a class="text-right" href="https://de.dhv-xc.de/flight/{p.id}">{{ p.xc }}</a></td>
+          <td class="text-right"><a href="https://de.dhv-xc.de/flight/{{ p.id }}">{{ p.xc }}</a></td>
           <td class="text-right">{{ p.deduction }}</td>
           <td class="text-right">{{ p.xcvalid }}</td>
           <td class="text-right">{{ p.landing }}</td>
