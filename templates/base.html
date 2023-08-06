@@ -6,36 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/chota@latest">
   <title>{% block title %}{% endblock %}</title>
-  <style>
-    td,
-    th {
-      white-space: nowrap;
-    }
-  </style>
 </head>
 
 <body>
-  <main class="container">
-    <nav class="nav">
-      <div class="nav-center">
-        <a class="brand" href="https://gsccolibri.de/">
-          <img style="max-height:15rem" src="static/icon.png" alt="">
-        </a>
-      </div>
-    </nav>
+  <nav class="nav">
+    <div class="nav-center">
+      <a class="brand" href="https://gsccolibri.de/">
+        <img style="max-height:15rem" src="static/icon.png" alt="">
+      </a>
+    </div>
+  </nav>
 
-    <h1>{% block h1 %}{% endblock %}</h1>
+  <h1>{% block h1 %}{% endblock %}</h1>
 
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 
-    <hr />
+  <hr />
 
-
-    <!-- <footer class="container">
-      <p class="text-center is-small">
-        Letztes Update am {{ now }}. Letzter berücksichtiger Flug von {{ count_flight }} Flügen am {{ latest_flight }}.
-      </p>
-    </footer> -->
-  </main>
+</body>
 
 </html>
